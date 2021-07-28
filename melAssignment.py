@@ -43,7 +43,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.sidebar.markdown('<p class="###font",color='skyblue'>A project by:</p>', unsafe_allow_html=True)
+st.sidebar.markdown('<p class="font">A project by:</p>', unsafe_allow_html=True)
 
 st.sidebar.write("<a href='https://www.linkedin.com/in/melissa-nathan-11168069/'>Melissa Nathan </a>", unsafe_allow_html=True)
 
