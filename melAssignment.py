@@ -87,6 +87,7 @@ st.sidebar.write('Before you continue, please read the [terms and conditions](ht
 show = st.sidebar.checkbox('I agree to the terms and conditions')
 if show :
         st.write('Hepatitis C Data (Original Data) ')
+        st.write('For further info on the dataset,please click this [link](https://www.kaggle.com/fedesoriano/hepatitis-c-dataset)
         st.write(data)
 
 else:
