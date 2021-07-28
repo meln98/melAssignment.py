@@ -122,60 +122,14 @@ st.write(analyze)
 
 # st.write.plotCorrelationMatrix(data, 14)
 
-
-        # uploaded_file = st.file_uploader("HepatitisCdata.csv")
-        # st.write(uploaded_file)
-        # data = pd.read_csv(uploaded_file)
-
-# uploaded_file = st.sidebar.file_uploader(
-#             "Upload a CSV",
-#             type='csv'    )
-
-
-# show = load_data
-        # st.write("HepatitisCdata.csv")
-        # data=pd.read_csv("HepatitisCdata.csv")
-        # data = data.dropna()
-        # a = data.round(2)
-        # data=a.drop(['Unnamed: 0'], axis=1)
-        # # X = a.drop(['Category','Unnamed: 0'], axis=1)
-        # df=pd.DataFrame("HepatitisCdata.csv")
-        # st.datatable(df)
-     
-# show = st.sidebar.button("Click to clean the data")
-# if show:
-#         data=pd.read_csv("HepatitisCdata.csv") 
-#         data = data.dropna()
-#         a = data.round(2)
-#         data = a.drop(['Unnamed: 0'], axis=1)
-#         data['Category'].loc[data['Category'].isin(["1=Hepatitis","2=Fibrosis", "3=Cirrhosis"])] = 1
-#         data['Category'].loc[data['Category'].isin(["0=Blood Donor", "0s=suspect Blood Donor"])] = 0
-#         data['Sex'].loc[data['Sex']=='m']=1
-#         data['Sex'].loc[data['Sex']=='f']=0
-  
-#         st.write('Hepatitis C Data (Cleaned Data) ')
-#         st.write(data)
-
-# data = pd.read_csv("HepatitisCdata.csv")
-# show = data
-
-# data['Category'].loc[data['Category'].isin(["1=Hepatitis","2=Fibrosis", "3=Cirrhosis"])] = 1
-# data['Category'].loc[data['Category'].isin(["0=Blood Donor", "0s=suspect Blood Donor"])] = 0
-
-
 y = data['Category']
 y = LabelEncoder().fit_transform(y)
-
-
-
-
 
 classifier_name = st.sidebar.selectbox(
     'Select classifier',
     ('KNN', 'SVM', 'Random Forest')
 )
 
-     
 show = st.sidebar.button("Click to clean & process the data")
 if show:
         data=pd.read_csv("HepatitisCdata.csv") 
@@ -190,16 +144,13 @@ if show:
         st.write('Hepatitis C Data (Cleaned Data) ')
         st.write(data)
 
-
 X = data.drop(['Category'], axis=1)
 y = data['Category']
 y = LabelEncoder().fit_transform(y)
 
 
-
 from sklearn.metrics import classification_report
 from sklearn.neighbors import KNeighborsClassifier
-
 
 
 test_data_ratio = st.sidebar.slider('Select testing size or ratio', 
@@ -209,15 +160,11 @@ test_data_ratio = st.sidebar.slider('Select testing size or ratio',
 random_state = st.sidebar.slider('Select random state', 1, 589 ,value=10)
 
 st.write("## 1: Summary (X variables)")
-
-
 if len(X)==0:
    st.write("<font color='Aquamarine'>Note: Predictors @ X variables have not been selected.</font>", unsafe_allow_html=True)
 else:
    st.write('Shape of predictors @ X variables :', X.shape)
    st.write('Summary of predictors @ X variables:', pd.DataFrame(X).describe())
-
-
 
 st.write("## 2: Summary (y variable)")
 
@@ -231,9 +178,6 @@ elif len(np.unique(y)) <6:
 else: 
    st.write("<font color='red'>Warning: System detects an unusual number of unique classes. Please make sure that the label @ y is a categorical variable. Ignore this warning message if you are sure that the y is a categorical variable.</font>", unsafe_allow_html=True)
    st.write('Number of classes:', len(np.unique(y)))
-
-
-
 
 def add_parameter_ui(clf_name):
     params = dict()
@@ -256,8 +200,6 @@ def add_parameter_ui(clf_name):
 
 params = add_parameter_ui(classifier_name)
 
-
-
 def get_classifier(clf_name, params):
     clf = None
     if clf_name == 'SVM':
@@ -271,15 +213,10 @@ def get_classifier(clf_name, params):
 
 clf = get_classifier(classifier_name, params)
 
-
 st.write("## 3: Classification Report")
- 
-
 if len(X)!=0 and len(y)!=0: 
 
   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_data_ratio, random_state=random_state)
-
-
   labelencoder = LabelEncoder() 
   data['Category'] = labelencoder.fit_transform(data['Category'])
   scaler = StandardScaler()
@@ -288,11 +225,6 @@ if len(X)!=0 and len(y)!=0:
 
   clf.fit(X_train_scaled, y_train)
   y_pred = clf.predict(X_test_scaled)
-
-# from sklearn.metrics import classification_report, confusion_matrix
-  # confusion_matrix(ytest, ypred)
-
-  # st.write(classification_report(ytest, ypred))
 
   st.write('Classifier:',classifier_name)
   st.write('Classification report:')
@@ -303,8 +235,6 @@ if len(X)!=0 and len(y)!=0:
 
 else: 
    st.write("<font color='Aquamarine'>Note: No classification report generated.</font>", unsafe_allow_html=True)
-
-
 
 
 
