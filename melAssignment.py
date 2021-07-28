@@ -90,7 +90,7 @@ data=load_data()
 
 st.sidebar.write('Before you continue, please read the [terms and conditions](https://www.gnu.org/licenses/gpl-3.0.en.html)')
 
-show = st.sidebar.checkbox('I have agree to the terms and conditions')
+show = st.sidebar.checkbox('I agree to the terms and conditions')
 if show :
         st.write('Hepatitis C Data (Original Data) ')
         st.write(data)
@@ -99,8 +99,8 @@ else:
         st.write('Thank you, please read the terms and conditions to proceed')
 
 
-# analyze = sv.analyze(data)
-# st.write(analyze)
+analyze = sv.analyze(data)
+st.write(analyze)
 
 # def plotCorrelationMatrix(data, graphWidth):
 #     filename = data
