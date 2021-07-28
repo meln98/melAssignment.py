@@ -1,4 +1,6 @@
-streamlit 
-numpy 
-pandas
-time
+streamlit==0.84.1
+numpy==1.19.5
+pandas==1.1.5
+pyngrok==5.0.5
+dtale==1.52.0
+matplotlib==3.2.2
