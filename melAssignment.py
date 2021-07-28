@@ -3,15 +3,13 @@ import streamlit as st
 
 import numpy as np
 import pandas as pd
-import time
-import tkinter 
+# import time
 import matplotlib.pyplot as plt
-import seaborn as sns
-import sweetviz as sv
+# import seaborn as sns
+# import sweetviz as sv
 
 
 from matplotlib import pyplot as plt
-# from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler
@@ -20,8 +18,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
-# from colored import fg, bg, attr
-from termcolor import colored
+# # from colored import fg, bg, attr
+# from termcolor import colored
 from sklearn.preprocessing import LabelEncoder
 
 
