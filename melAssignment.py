@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 # import time
 import matplotlib.pyplot as plt
-# import seaborn as sns
-# import sweetviz as sv
+import seaborn as sns
+import sweetviz as sv
 
 
 from matplotlib import pyplot as plt
@@ -18,13 +18,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
-# # from colored import fg, bg, attr
-# from termcolor import colored
 from sklearn.preprocessing import LabelEncoder
-
-
-
-
 
 
 st.set_page_config(layout="wide")
@@ -37,7 +31,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="big-font">Hepatitis C Analysis</p>', unsafe_allow_html=True)
+st.markdown('<p class="big-font" colour=Blue>Hepatitis C Analysis</p>', unsafe_allow_html=True)
 
 
 st.markdown("""
