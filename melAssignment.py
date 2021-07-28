@@ -31,7 +31,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="big-font" colour=Blue>Hepatitis C Analysis</p>', unsafe_allow_html=True)
+st.markdown('<p class="big-font" colour=Blue,>Hepatitis C Analysis</p>', unsafe_allow_html=True)
 
 
 st.markdown("""
@@ -43,7 +43,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.sidebar.markdown('<p class="###font",>A project by:</p>', unsafe_allow_html=True)
+st.sidebar.markdown('<p class="###font",color='skyblue'>A project by:</p>', unsafe_allow_html=True)
 
 st.sidebar.write("<a href='https://www.linkedin.com/in/melissa-nathan-11168069/'>Melissa Nathan </a>", unsafe_allow_html=True)
 
@@ -57,7 +57,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="font1">Disclaimer :</p>', unsafe_allow_html=True)
+st.markdown('<p "class=font1">Disclaimer :</p>', unsafe_allow_html=True)
 
 
 
@@ -86,7 +86,7 @@ st.sidebar.write('Before you continue, please read the [terms and conditions](ht
 
 show = st.sidebar.checkbox('I agree to the terms and conditions')
 if show :
-        st.write("<font color='Dark Blue'>"Hepatitis C Data (Original Data)"</font>", unsafe_allow_html=True)
+        st.write("<font color='Blue'>"Hepatitis C Data (Original Data)"</font>", unsafe_allow_html=True)
         st.write('For further info on the dataset,please click this [link](https://www.kaggle.com/fedesoriano/hepatitis-c-dataset))
         st.write(data)
 
