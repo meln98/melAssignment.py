@@ -254,12 +254,12 @@ hide_streamlit_style = """
 
 import matplotlib.pyplot as plt
 
-RandomForest.feature_importances_
-list(X.columns)
-important_factors = pd.DataFrame({'Factor': list(X.columns), 'Importance': RandomForest.feature_importances_})
-# important_factors
-important_factors.sort_values(by=['Importance'], ascending=False,inplace=True)
-st.plt.bargraph(important_factors)
+# RandomForest.feature_importances_
+# list(X.columns)
+# important_factors = pd.DataFrame({'Factor': list(X.columns), 'Importance': RandomForest.feature_importances_})
+# # important_factors
+# important_factors.sort_values(by=['Importance'], ascending=False,inplace=True)
+# st.plt.bargraph(important_factors)
 
 
 
