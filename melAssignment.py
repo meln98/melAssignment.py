@@ -119,8 +119,8 @@ else:
 
 # st.write.plotCorrelationMatrix(data, 14)
 
-y = data['Category']
-y = LabelEncoder().fit_transform(y)
+# y = data['Category']
+# y = LabelEncoder().fit_transform(y)
 
 classifier_name = st.sidebar.selectbox(
     'Select classifier',
@@ -140,6 +140,8 @@ if show:
   
         st.write('Hepatitis C Data (Cleaned Data) ')
         st.write(data)
+else: 
+    st.write('NIL')
 
 X = data.drop(['Category'], axis=1)
 y = data['Category']
