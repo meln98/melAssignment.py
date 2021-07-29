@@ -152,6 +152,17 @@ if show:
 else: 
     st.write('')
 
+
+fig = plt.figure(data)
+plt.scatter(X,
+               c=y, alpha=0.8,
+               cmap='viridis')
+
+plt.xlabel('Attributes')
+plt.ylabel('Category')
+plt.colorbar()
+st.pyplot(fig)
+    
 X = data.drop(['Category'], axis=1)
 y = data['Category']
 y = LabelEncoder().fit_transform(y)
@@ -259,7 +270,8 @@ list(X.columns)
 important_factors = pd.DataFrame({'Factor': list(X.columns), 'Importance': RandomForest.feature_importances_})
 # important_factors
 important_factors.sort_values(by=['Importance'], ascending=False,inplace=True)
-st.pyplot(important_factors)
+st.write(important_factors)
+
 
 
 
