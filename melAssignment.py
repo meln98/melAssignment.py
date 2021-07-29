@@ -131,7 +131,7 @@ classifier_name = st.sidebar.selectbox(
     ('KNN', 'SVM', 'Random Forest')
 )
 
-st.write('To clean & process the data')
+st.sidebar.write('To clean & process the data')
 # button = st.sidebar.button('Click to clean & process the data')
 show = st.sidebar.button('Click Here')
 # st.sidebar.button('Click here')
