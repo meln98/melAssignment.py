@@ -31,7 +31,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title('##Hepatitis C Analysis')
+# st.title('##Hepatitis C Analysis')
 
 st.markdown('<p class="big-font" colour=Blue,>Hepatitis C Analysis</p>', unsafe_allow_html=True)
 
@@ -90,6 +90,14 @@ if show :
         st.write('Hepatitis C Data [(Original Data)](https://www.kaggle.com/fedesoriano/hepatitis-c-dataset) ')
 #         st.write('For further info on the dataset,please click this [link](https://www.kaggle.com/fedesoriano/hepatitis-c-dataset))
         st.write(data)
+        chart_data = pd.DataFrame(
+        np.random.randn(589, 2),
+        columns=['a', 'b', 'c'])
+
+        st.line_chart(chart_data)
+
+st.map(map_data)
+       
 
 else:
         st.write('Thank you, please read the terms and conditions to proceed')
