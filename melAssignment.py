@@ -259,7 +259,7 @@ list(X.columns)
 important_factors = pd.DataFrame({'Factor': list(X.columns), 'Importance': RandomForest.feature_importances_})
 # important_factors
 important_factors.sort_values(by=['Importance'], ascending=False,inplace=True)
-st.write(important_factors)
+st.plt.bargraph(important_factors)
 
 
 
