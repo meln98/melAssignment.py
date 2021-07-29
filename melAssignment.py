@@ -85,7 +85,6 @@ data=load_data()
 
 
 st.sidebar.write('Before you continue, please read the [terms and conditions](https://www.gnu.org/licenses/gpl-3.0.en.html)')
-
 show = st.sidebar.checkbox('I agree to the terms and conditions')
 if show :
         st.write('Hepatitis C Data [(Original Data)](https://www.kaggle.com/fedesoriano/hepatitis-c-dataset) ')
@@ -127,7 +126,8 @@ classifier_name = st.sidebar.selectbox(
     ('KNN', 'SVM', 'Random Forest')
 )
 
-show = st.sidebar.button("<font color='Aquamarine'>"Click to clean & process the data"</font>", unsafe_allow_html=True)
+button = st.sidebar.button("<font color='Aquamarine'>"Click to clean & process the data"</font>", unsafe_allow_html=True)
+# show = st.sidebar.button("<font color='Aquamarine'>"Click to clean & process the data"</font>", unsafe_allow_html=True)
 if show:
         data=pd.read_csv("HepatitisCdata.csv") 
         data = data.dropna()
