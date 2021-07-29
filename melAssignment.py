@@ -90,11 +90,11 @@ if show :
         st.write('Hepatitis C Data [(Original Data)](https://www.kaggle.com/fedesoriano/hepatitis-c-dataset) ')
 #         st.write('For further info on the dataset,please click this [link](https://www.kaggle.com/fedesoriano/hepatitis-c-dataset))
         st.write(data)
-        chart_data = pd.DataFrame(
-        np.random.randn(589, 2),
-        columns=['a', 'b', 'c'])
+#         chart_data = pd.DataFrame(
+#         np.random.randn(589, 2),
+#         columns=['a', 'b', 'c'])
 
-        st.line_chart(chart_data)
+#         st.line_chart(chart_data)
        
 else:
         st.write('Thank you, please read the terms and conditions to proceed')
