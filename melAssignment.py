@@ -127,8 +127,7 @@ classifier_name = st.sidebar.selectbox(
     ('KNN', 'SVM', 'Random Forest')
 )
 
-show = st.sidebar.button
-("<font color='Aquamarine'>"Click to clean & process the data"</font>", unsafe_allow_html=True)
+show = st.sidebar.button("<font color='Aquamarine'>"Click to clean & process the data"</font>", unsafe_allow_html=True)
 if show:
         data=pd.read_csv("HepatitisCdata.csv") 
         data = data.dropna()
