@@ -89,13 +89,7 @@ show = st.sidebar.checkbox('I agree to the terms and conditions')
 if show :
         st.write('Hepatitis C Data [(Original Data)](https://www.kaggle.com/fedesoriano/hepatitis-c-dataset)')
 #         st.write('For further info on the dataset,please click this [link](https://www.kaggle.com/fedesoriano/hepatitis-c-dataset))
-        st.write(data)
-#         chart_data = pd.DataFrame(
-#         np.random.randn(589, 2),
-#         columns=['a', 'b', 'c'])
-
-#         st.line_chart(chart_data)
-       
+        st.write(data)       
 else:
         st.write('Thank you, please read the terms and conditions to proceed')
 
@@ -155,7 +149,7 @@ else:
 
 fig = plt.figure()
 plt.scatter(X, y
-               c=y, alpha=0.8,
+               color=y, alpha=0.8,
                cmap='viridis')
 
 plt.xlabel('Attributes')
