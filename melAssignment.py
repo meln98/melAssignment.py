@@ -31,6 +31,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.title('##Hepatitis C Analysis')
+
 st.markdown('<p class="big-font" colour=Blue,>Hepatitis C Analysis</p>', unsafe_allow_html=True)
 
 
@@ -86,7 +88,7 @@ st.sidebar.write('Before you continue, please read the [terms and conditions](ht
 
 show = st.sidebar.checkbox('I agree to the terms and conditions')
 if show :
-        st.write("<font color='Blue'>"Hepatitis C Data (Original Data)"</font>", unsafe_allow_html=True)
+        st.write("<font>"Hepatitis C Data (Original Data)"</font>", unsafe_allow_html=True)
         st.write('For further info on the dataset,please click this [link](https://www.kaggle.com/fedesoriano/hepatitis-c-dataset))
         st.write(data)
 
@@ -97,25 +99,25 @@ else:
 # analyze = sv.analyze(data)
 # st.write(analyze)
 
-def plotCorrelationMatrix(data, graphWidth):
-    filename = data
-    # filename = data.DataFrame
-    df = data.dropna() # drop columns & rows with NaN
-    df = data[[col for col in data if data[col].nunique() > 1]] # keep columns where there are more than 1 unique values
-    if data.shape[1] < 2:
-        print(f'No correlation plots shown: The number of non-NaN or constant columns ({data.shape[1]}) is less than 2')
-        return
-    corr = df.corr()
-    plt.figure(num=None, figsize=(graphWidth, graphWidth), dpi=80, facecolor='w', edgecolor='k')
-    corrMat = plt.matshow(corr, fignum = 1)
-    plt.xticks(range(len(corr.columns)), corr.columns, rotation=90)
-    plt.yticks(range(len(corr.columns)), corr.columns)
-    plt.gca().xaxis.tick_bottom()
-    plt.colorbar(corrMat)
-    plt.title(f'Correlation Matrix for {filename}', fontsize=15)
-    plt.show()
+# def plotCorrelationMatrix(data, graphWidth):
+#     filename = data
+#     # filename = data.DataFrame
+#     df = data.dropna() # drop columns & rows with NaN
+#     df = data[[col for col in data if data[col].nunique() > 1]] # keep columns where there are more than 1 unique values
+#     if data.shape[1] < 2:
+#         print(f'No correlation plots shown: The number of non-NaN or constant columns ({data.shape[1]}) is less than 2')
+#         return
+#     corr = df.corr()
+#     plt.figure(num=None, figsize=(graphWidth, graphWidth), dpi=80, facecolor='w', edgecolor='k')
+#     corrMat = plt.matshow(corr, fignum = 1)
+#     plt.xticks(range(len(corr.columns)), corr.columns, rotation=90)
+#     plt.yticks(range(len(corr.columns)), corr.columns)
+#     plt.gca().xaxis.tick_bottom()
+#     plt.colorbar(corrMat)
+#     plt.title(f'Correlation Matrix for {filename}', fontsize=15)
+#     plt.show()
 
-st.write.plotCorrelationMatrix(data, 14)
+# st.write.plotCorrelationMatrix(data, 14)
 
 y = data['Category']
 y = LabelEncoder().fit_transform(y)
@@ -233,5 +235,11 @@ else:
    st.write("<font color='Aquamarine'>Note: No classification report generated.</font>", unsafe_allow_html=True)
 
 
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
 
 import matplotlib.pyplot as plt
