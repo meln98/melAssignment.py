@@ -95,10 +95,7 @@ if show :
         columns=['a', 'b', 'c'])
 
         st.line_chart(chart_data)
-
-st.map(map_data)
        
-
 else:
         st.write('Thank you, please read the terms and conditions to proceed')
 
