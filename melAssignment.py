@@ -147,15 +147,15 @@ else:
     st.write('')
 
 
-fig = plt.figure()
-plt.scatter(X, y
-               color=y, alpha=0.8,
-               cmap='viridis')
+# fig = plt.figure()
+# plt.scatter(X, y
+#                c=y, alpha=0.8,
+#                cmap='viridis')
 
-plt.xlabel('Attributes')
-plt.ylabel('Category')
-plt.colorbar()
-st.pyplot(fig)
+# plt.xlabel('Attributes')
+# plt.ylabel('Category')
+# plt.colorbar()
+# st.pyplot(fig)
     
 X = data.drop(['Category'], axis=1)
 y = data['Category']
